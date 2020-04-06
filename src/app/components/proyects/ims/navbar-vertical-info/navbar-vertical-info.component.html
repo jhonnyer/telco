@@ -1,0 +1,63 @@
+<script>
+    $(document).ready(function(){
+        
+    $('#submenu li a').on('click', function(e){
+       // $('#submenu').removeClass('in');
+      $('#submenu').toggleClass();
+    });
+    
+ });
+ 
+ 
+ $(document).ready(function(){
+        
+        $('#submenu1 li a').on('click', function(e){
+           // $('#submenu').removeClass('in');
+          $('#submenu1').toggleClass();
+        });
+        
+     });
+ </script>
+
+
+
+<!--<div class="col-sm-2" >
+    <ul class="nav nav-stacked" routerLinkActive="active">
+        <li class="nav-item"><a class="nav-link" routerLink="informacion">Plataforma Telco</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="tecnologias">Tecnologias</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="monitoreo">Monitorizacion</a></li>
+      </ul><br>
+</div>-->
+
+
+<div class="col-sm-2" >
+    <ul class="nav nav-pills nav-stacked" routerLinkActive="active">
+        
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="collapse" data-target="#submenu" aria-expanded="false" 
+            ><span class="hidden-xs"></span>Plataforma Telco</a>
+            <ul class="nav collapse" id="submenu" role="menu" aria-labelledby="btn-1">                        
+                <li><a class="nav-link " [routerLink]="['/ims']"><span class="hidden-xs">Infraestructuras</span></a></li>
+                <li><a class="nav-link " [routerLink]="['/ims/info-servicios']"><span class="hidden-xs">Servicios</span></a></li>
+            </ul>
+        </li>
+        
+         <!--routerLink="tecnologias"><span class="icon-link2"></span>-->     
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="collapse" data-target="#submenu1" aria-expanded="false" 
+        ><span class="hidden-xs"></span>Tecnológias</a>
+            <ul class="nav collapse" id="submenu1" role="menu" aria-labelledby="btn-1">                        
+                <li><a class="nav-link " [routerLink]="['/ims/imsInfo']"><span class="hidden-xs">NGN/IMS</span></a></li>
+                <li><a class="nav-link" [routerLink]="['/ims/NFVInfo']"><span class="hidden-xs">NFV</span></a></li>
+                <li><a class="nav-link " [routerLink]="['/ims/vIMSInfo']"><span class="hidden-xs">Virtual IMS</span></a></li>
+                <li><a class="nav-link" [routerLink]="['/ims/SNMPInfo']"><span class="hidden-xs">SNMP</span></a></li>
+                <!--li><a class="nav-link" [routerLink]="['/ims/UDCInfo']"><span class="hidden-xs">UDC</span></a></li-->
+            </ul>
+        </li>
+        
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-toggle="collapse" data-target="#submenu2" aria-expanded="false" 
+            ><span class="hidden-xs">Monitorización</span></a>
+            <ul class="nav collapse" id="submenu2" role="menu" aria-labelledby="btn-1">                        
+                <li><a class="nav-link" [routerLink]="['/ims/InfoRend']"><span class="hidden-xs">Rendimiento</span></a></li>
+            </ul>
+        </li>
+      </ul>
+</div>

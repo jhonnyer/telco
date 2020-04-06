@@ -1,0 +1,62 @@
+<app-navbar-info></app-navbar-info>
+
+<div class="container-fluid">
+
+    <div class="col-sm-6 text-left">
+        <h1>Arquitecturas IMS</h1>
+        <div>
+            <p>El testbed <b>Telco IMS</b> provee recursos de almacenamiento  y procesamiento para 
+                acceder a arquitecturas de VM orquestadas por Openstack. Los usuarios registrados en 
+                Telco IMS pueden solicitar la <b>arquitectura de Clearwater IMS</b> visualizada 
+                en la figura para ser desplegada en <b>instancias de VM</b>. 
+                
+                Los usuarios pueden configurar y programas las VM a partir de un terminal de comandos en la 
+                la web con el fin de investigar, desarrollar e innovar en nuevos servicios multimedia convergentes de redes de nueva 
+                generación. Finalmente, Telco IMS permite monitorizar el consumo de recursos de las VM con el fin de analizar el
+                rendmiento y la QoS de la arquitectura utilizada.   
+            </p>
+        </div>
+        <div class="row">
+                <div class="col-sm-6 center1">
+                    <a href="javascript:history.go(-1)" class="btn btn-outline-success mx-1"><i class="fas fa-arrow-left  fa-2x  "></i> <br> Atras</a>
+                    <a [routerLink]="['/ims/tests']" class="btn btn-outline-success mx-1"> <i class="fas fa-clipboard-list  fa-2x  "></i> <br> Pruebas</a>
+                    <a [routerLink]="['/ims/graphics/']" class="btn btn-outline-success mx-1"><i class="fa fa-bar-chart fa-2x"></i> <br> Gráficas</a>
+                    <a [routerLink]="['/ims/available']" class="btn btn-outline-info mx-1"> <i class="fas fa-plus  fa-2x  "></i> <br> Solicitar Arquitectura</a>
+                </div>
+        </div>
+    </div>
+            
+        <div>
+            <div *ngIf="arquitectures; else await" >
+                <div class="card-columns">
+                    <div *ngFor="let arq of arquitectures" class="card">
+                        <div *ngIf="arq.type==1; else other" style="width: 10rem;" >
+                            <img src="/assets/ims/server.png" class="card-img-top" alt="...">
+                        </div>
+                        <ng-template #other>
+                            <img src="/assets/ims/clearwater.JPG" class="card-img-top" alt="...">
+                        </ng-template>
+                    <div class="card-body">
+                        <h5 class="card-title"> {{arq.name}} </h5>
+                        <small> {{arq.domain}} </small> <br>
+                        <!-- <p class="card-text"> {{ arq.description }} </p> -->
+                        <a [routerLink]="[arq._id]" class="btn btn-outline-success mx-1">Acceder</a>
+                        <button class="btn btn-outline-warning mx-1" (click)="dropArq(arq._id)">Liberar</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 text-left">   
+                <a href="assets/ims/clearwater.JPG" target="_blank">
+                    <img src="assets/ims/clearwater.JPG" alt="plataforma Telco"  class="center" hspace="10" vspace="10">
+                </a>
+            </div> 
+            
+            <!--ng-template #await>
+            <div class="spinner-border m-5" role="status">
+                <span class="sr-only">Loading...</span>
+                </div>
+            </ng-template-->
+            
+        </div>
+    </div>

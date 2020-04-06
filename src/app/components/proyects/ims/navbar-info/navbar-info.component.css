@@ -1,0 +1,30 @@
+/*div {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 16px;
+  }*/
+
+
+  li {
+    margin: px 0px 0px 0px;
+    font-size: 16px;
+ }
+
+.navbar-inverse {
+    background-color: #27363d;
+    border: none;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: rgb(36, 34, 34);
+  }
+  
+  .navbar-inverse .navbar-toggle .icon-bar {
+    background-color: rgb(31, 28, 28);
+  }
+  
+  .navbar-inverse .navbar-nav>.active>a,
+  .navbar-inverse .navbar-nav>.active>a:hover,
+  .navbar-inverse .navbar-nav>.active>a:focus {
+    background-color: #2d4144;
+  }
